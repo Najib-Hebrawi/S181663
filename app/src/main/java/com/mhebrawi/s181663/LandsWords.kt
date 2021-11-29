@@ -15,6 +15,7 @@ var hiddenword: String = ""
 
 
 
+
 fun addLandsName() {
     landsName.add("Finland")
     landsName.add("Ireland")
@@ -25,7 +26,6 @@ fun addLandsName() {
 
 }
 
-
 fun getRandomLandName(): String {
     addLandsName()
     val randomLandsWord = (0..5).random()
@@ -34,7 +34,8 @@ fun getRandomLandName(): String {
 
 }
 
-fun hiddenTheWord(): String {
+
+fun hiddenLandsNameWord(): String {
 
     var wordShouldBeHidden = randomLands
     hiddenWordArrays = Array(wordShouldBeHidden.length) { "it = $it" }

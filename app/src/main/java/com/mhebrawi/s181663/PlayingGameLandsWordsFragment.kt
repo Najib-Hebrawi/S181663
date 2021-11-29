@@ -24,14 +24,15 @@ private const val ARG_PARAM2 = "param2"
  */
 class PlayingGameFragment : Fragment() {
 
+    private lateinit var binding: FragmentPlayingGameLandswordsBinding
+
 
     var lives: Int = 5
-    var scores: Int = 0
-    var points: Int = 0
+   var scores: Int = 0
+     var points: Int = 0
     var handler = Handler()
 
 
-    private lateinit var binding: FragmentPlayingGameLandswordsBinding
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -61,7 +62,7 @@ class PlayingGameFragment : Fragment() {
         setScore(scores)
         updateLifeScore()
         binding.textViewShowTheWord.text = getRandomLandName()
-        binding.textViewShowTheWord.text = hiddenTheWord()
+        binding.textViewShowTheWord.text = hiddenLandsNameWord()
 
         binding.buClickToSendTheLetter.setOnClickListener {
             game()

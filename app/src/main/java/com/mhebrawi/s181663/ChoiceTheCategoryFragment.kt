@@ -51,9 +51,9 @@ class ChoiceTheCategoryFragment : Fragment() {
            binding.imageButtonEarth.setOnClickListener{
               view.findNavController().navigate(R.id.action_choiceTheCategoryFragment_to_playingGameLandsWordFragment)
             }
-           // binding.imageButtonZoo.setOnClickListener{
-             //   view.findNavController().navigate(R.id.action_choiceTheCategoryFragment_to_playingGameLandsWordFragment)
-               //         }
+            binding.imageButtonZoo.setOnClickListener{
+                view.findNavController().navigate(R.id.action_choiceTheCategoryFragment_to_playingGameAnimalsFragment)
+                        }
 
 
     }
