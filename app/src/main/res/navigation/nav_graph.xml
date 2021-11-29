@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startGameFragment">
 
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.mhebrawi.s181663.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.mhebrawi.s181663.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_startGameFragment_to_playingGameFragment"
+            app:destination="@id/playingGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playingGameFragment"
+        android:name="com.mhebrawi.s181663.PlayingGameFragment"
+        android:label="fragment_playing_game"
+        tools:layout="@layout/fragment_playing_game" />
 </navigation>
