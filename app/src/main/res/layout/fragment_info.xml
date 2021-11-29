@@ -5,4 +5,12 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoFragment"/>
+    tools:context=".InfoFragment">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/infoo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
