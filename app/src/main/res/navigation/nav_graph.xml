@@ -19,12 +19,29 @@
             android:id="@+id/action_startGameFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
         <action
-            android:id="@+id/action_startGameFragment_to_playingGameFragment"
+            android:id="@+id/action_startGameFragment_to_choiceTheCategoryFragment"
+            app:destination="@id/choiceTheCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceTheCategoryFragment"
+        android:name="com.mhebrawi.s181663.ChoiceTheCategoryFragment"
+        android:label="fragment_choice_the_category"
+        tools:layout="@layout/fragment_choice_the_category" >
+        <action
+            android:id="@+id/action_choiceTheCategoryFragment_to_playingGameAnimalsFragment"
+            app:destination="@id/playingGameAnimalsFragment" />
+        <action
+            android:id="@+id/action_choiceTheCategoryFragment_to_playingGameLandsWordFragment"
             app:destination="@id/playingGameFragment" />
     </fragment>
     <fragment
+        android:id="@+id/playingGameAnimalsFragment"
+        android:name="com.mhebrawi.s181663.PlayingGameAnimalsFragment"
+        android:label="fragment_playing_game_animals"
+        tools:layout="@layout/fragment_playing_game_animals" />
+    <fragment
         android:id="@+id/playingGameFragment"
         android:name="com.mhebrawi.s181663.PlayingGameFragment"
-        android:label="fragment_playing_game"
-        tools:layout="@layout/fragment_playing_game" />
+        android:label="fragment_playing_game_landswords"
+        tools:layout="@layout/fragment_playing_game_landswords" />
 </navigation>

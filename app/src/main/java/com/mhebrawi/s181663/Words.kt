@@ -13,6 +13,8 @@ var hiddenWordArrays = Array<String>(0) { "it = $it" }
 var hiddenword: String = ""
 
 
+
+
 fun addLandsName() {
     landsName.add("Finland")
     landsName.add("Ireland")

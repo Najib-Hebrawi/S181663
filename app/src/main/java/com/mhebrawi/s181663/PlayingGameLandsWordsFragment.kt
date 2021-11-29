@@ -10,7 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.mhebrawi.s181663.databinding.FragmentPlayingGameBinding
+import com.mhebrawi.s181663.databinding.FragmentPlayingGameLandswordsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ class PlayingGameFragment : Fragment() {
     var handler = Handler()
 
 
-    private lateinit var binding: FragmentPlayingGameBinding
+    private lateinit var binding: FragmentPlayingGameLandswordsBinding
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -50,13 +50,13 @@ class PlayingGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_playing_game, container, false)
+        return inflater.inflate(R.layout.fragment_playing_game_landswords, container, false)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentPlayingGameBinding.bind(view)
+        binding = FragmentPlayingGameLandswordsBinding.bind(view)
         setLife(lives)
         setScore(scores)
         updateLifeScore()
