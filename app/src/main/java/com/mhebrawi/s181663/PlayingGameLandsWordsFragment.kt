@@ -28,10 +28,9 @@ class PlayingGameFragment : Fragment() {
 
 
     var lives: Int = 5
-   var scores: Int = 0
-     var points: Int = 0
+    var scores: Int = 0
+    var points: Int = 0
     var handler = Handler()
-
 
 
     // TODO: Rename and change types of parameters
@@ -218,22 +217,29 @@ class PlayingGameFragment : Fragment() {
 
 
     fun gamWonOver() {
-        val builder = AlertDialog.Builder(requireContext())
-        with(builder) {
-            setTitle("   ")
-            setPositiveButton("spil igen") { dialog, which ->
-                requireActivity().onBackPressed()
 
+
+        binding.apply {
+
+            buClickToStartSpining.visibility = View.GONE
+            textViewShowTheWord.visibility = View.GONE
+            EditTextWritTheWord.visibility = View.GONE
+            val builder = AlertDialog.Builder(requireContext())
+            with(builder) {
+                setTitle("   ")
+                setPositiveButton("spil igen") { dialog, which ->
+                    requireActivity().onBackPressed()
+
+                }
+                setNegativeButton("luk spilet") { dialog, which ->
+
+
+                    Log.d("Main", "Negative button clicked")
+                }
+                show()
             }
-            setNegativeButton("luk spilet") { dialog, which ->
 
-
-                Log.d("Main", "Negative button clicked")
-            }
-            show()
         }
-
     }
 }
-
 
