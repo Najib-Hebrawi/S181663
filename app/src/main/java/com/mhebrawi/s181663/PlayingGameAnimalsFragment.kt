@@ -1,6 +1,7 @@
 package com.mhebrawi.s181663
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
@@ -205,8 +206,8 @@ class PlayingGameAnimalsFragment : Fragment() {
                     binding.playerLives.text = "Lives$lives"
                     buClickToStartSpining.visibility = View.VISIBLE
                     spinAgain()
-                } else if (isWonn() && getScore() < 0) {
-                    TODO() // her jeg skal implemntere at man vinder
+                } else if (isWonn() && getScore() <= 0) {
+                    gamWonOver()
                 }
             }
         }
@@ -214,21 +215,29 @@ class PlayingGameAnimalsFragment : Fragment() {
 
 
     fun gamWonOver() {
+        binding.apply {
         val builder = AlertDialog.Builder(requireContext())
         with(builder) {
-            setTitle("   ")
-            setPositiveButton("spil igen") { dialog, which ->
-                requireActivity().onBackPressed()
 
+
+                buClickToStartSpining.visibility = View.GONE
+                textViewShowTheWord.visibility = View.GONE
+                EditTextWritTheWord.visibility = View.GONE
+
+                setTitle("   ")
+                setPositiveButton("spil igen") { dialog, which ->
+                    requireActivity().onBackPressed()
+
+                }
+                setNegativeButton("luk spilet") { dialog, which ->
+                    Activity().finish()
+
+
+                    Log.d("Main", "Negative button clicked")
+                }
+                show()
             }
-            setNegativeButton("luk spilet") { dialog, which ->
 
-
-                Log.d("Main", "Negative button clicked")
-            }
-            show()
         }
-
     }
 }
-
