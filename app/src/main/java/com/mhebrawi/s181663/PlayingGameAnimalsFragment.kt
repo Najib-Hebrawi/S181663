@@ -73,7 +73,7 @@ class PlayingGameAnimalsFragment : Fragment() {
     }
 
 
-    fun spinAgain() {
+    private fun spinAgain() {
         binding.apply {
             buClickToSendTheLetter.visibility = View.GONE
             EditTextWritTheWord.visibility = View.GONE
@@ -83,7 +83,7 @@ class PlayingGameAnimalsFragment : Fragment() {
     }
 
     @SuppressLint("WrongConstant")
-    fun spin() {
+    private fun spin() {
         binding.apply {
             buClickToStartSpining.setOnClickListener {
                 buClickToStartSpining.visibility = View.GONE
@@ -114,7 +114,7 @@ class PlayingGameAnimalsFragment : Fragment() {
 
 
     @SuppressLint("SetTextI18n")
-    fun spinlogic() {
+    private  fun spinlogic() {
 
         binding.apply {
             when {
@@ -172,7 +172,7 @@ class PlayingGameAnimalsFragment : Fragment() {
 
 
     @SuppressLint("WrongConstant", "SetTextI18n")
-    fun game() {
+   private fun game() {
         binding.apply {
             if (EditTextWritTheWord.text.trim().toString().isNotEmpty()) {
                 if (findLetterAsGussett(EditTextWritTheWord.text.toString())) {
@@ -214,7 +214,7 @@ class PlayingGameAnimalsFragment : Fragment() {
     }
 
 
-    fun gamWonOver() {
+   private fun gamWonOver() {
         binding.apply {
         val builder = AlertDialog.Builder(requireContext())
         with(builder) {

@@ -75,7 +75,7 @@ class PlayingGameFragment : Fragment() {
     }
 
 
-    fun spinAgain() {
+    private fun spinAgain() {
         binding.apply {
             buClickToSendTheLetter.visibility = View.GONE
             EditTextWritTheWord.visibility = View.GONE
@@ -85,7 +85,7 @@ class PlayingGameFragment : Fragment() {
     }
 
     @SuppressLint("WrongConstant")
-    fun spin() {
+    private fun spin() {
         binding.apply {
             buClickToStartSpining.setOnClickListener {
                 buClickToStartSpining.visibility = View.GONE
@@ -116,7 +116,7 @@ class PlayingGameFragment : Fragment() {
 
 
     @SuppressLint("SetTextI18n")
-    fun spinlogic() {
+    private fun spinlogic() {
 
         binding.apply {
             when {
@@ -165,7 +165,7 @@ class PlayingGameFragment : Fragment() {
 
 
     @SuppressLint("SetTextI18n")
-    private fun updateLifeScore() {
+     private fun updateLifeScore() {
         binding.apply {
             playerLives.text = "Lives : ${updateLives()}"
             playerScore.text = "Score : ${getScore()}"
@@ -174,7 +174,7 @@ class PlayingGameFragment : Fragment() {
 
 
     @SuppressLint("WrongConstant", "SetTextI18n")
-    fun game() {
+   private fun game() {
         binding.apply {
             if (EditTextWritTheWord.text.trim().toString().isNotEmpty()) {
                 if (findLetterAsGusset(EditTextWritTheWord.text.toString())) {
@@ -216,7 +216,7 @@ class PlayingGameFragment : Fragment() {
     }
 
 
-    fun gamWonOver() {
+    private fun gamWonOver() {
 
 
         binding.apply {
