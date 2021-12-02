@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.mhebrawi.s181663.databinding.FragmentPlayingGameLandswordsBinding
+import kotlin.system.exitProcess
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -190,7 +191,7 @@ class PlayingGameFragment : Fragment() {
                     else {
                         spinAgain()
                     }
-                } else if (!findLetterAsGusset(EditTextWritTheWord.text.toString()) && lives == 1) {
+                } else if (!findLetterAsGusset(EditTextWritTheWord.text.toString()) && lives <= 1) {
                     minusLife(lives)
                     lives = updateLives()
                     binding.playerLives.text = "Lives : $lives"
@@ -227,6 +228,7 @@ class PlayingGameFragment : Fragment() {
             val builder = AlertDialog.Builder(requireContext())
             with(builder) {
                 setTitle("   ")
+                setCancelable(false)
                 setPositiveButton("spil igen") { dialog, which ->
                     requireActivity().onBackPressed()
 
@@ -234,7 +236,7 @@ class PlayingGameFragment : Fragment() {
                 setNegativeButton("luk spilet") { dialog, which ->
 
 
-                    Log.d("Main", "Negative button clicked")
+                    exitProcess(-1)
                 }
                 show()
             }

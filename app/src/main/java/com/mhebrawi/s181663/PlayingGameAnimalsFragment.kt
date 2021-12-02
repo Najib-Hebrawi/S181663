@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.mhebrawi.s181663.databinding.FragmentPlayingGameAnimalsBinding
+import kotlin.system.exitProcess
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +27,7 @@ private const val ARG_PARAM2 = "param2"
 class PlayingGameAnimalsFragment : Fragment() {
     private lateinit var binding: FragmentPlayingGameAnimalsBinding
 
-    var lives: Int = 5
+    var lives: Int = 1
     var scores: Int = 0
     var points: Int = 0
     var handler = Handler()
@@ -188,7 +189,7 @@ class PlayingGameAnimalsFragment : Fragment() {
                     else {
                         spinAgain()
                     }
-                } else if (!findLetterAsGussett(EditTextWritTheWord.text.toString()) && lives == 1) {
+                } else if (!findLetterAsGussett(EditTextWritTheWord.text.toString()) && lives <= 1) {
                     minusLife(lives)
                     lives = updateLives()
                     binding.playerLives.text = "Lives : $lives"
@@ -225,15 +226,15 @@ class PlayingGameAnimalsFragment : Fragment() {
                 EditTextWritTheWord.visibility = View.GONE
 
                 setTitle("   ")
+            setCancelable(false)
                 setPositiveButton("spil igen") { dialog, which ->
                     requireActivity().onBackPressed()
 
                 }
                 setNegativeButton("luk spilet") { dialog, which ->
-                    Activity().finish()
+                    exitProcess(-1)
 
 
-                    Log.d("Main", "Negative button clicked")
                 }
                 show()
             }
