@@ -8,7 +8,7 @@ private var spinner = 0
 private var ms = ""
 
 fun spinWheelFun() {
-    spinner = (0..3).random()
+    spinner = (0..4).random()
 }
 
 fun getSpinner(): Int {
@@ -24,5 +24,7 @@ fun getSpinnerResult(): String {
         ms = "Reset Score"
     if (spinner == 3)
         ms = "minus life"
+    if (spinner == 4)
+        ms="+500"
     return ms
 }

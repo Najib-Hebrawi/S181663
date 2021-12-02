@@ -93,7 +93,7 @@ class PlayingGameFragment : Fragment() {
                 progressBar.visibility = View.VISIBLE
                 spinWheelFun()
                 spinlogic()
-                if (getSpinner() in 0..2) {
+                if (getSpinner() in 0..2 || getSpinner() ==4) {
                     val x = Runnable {
                         progressBar.visibility = View.GONE
                         buClickToSendTheLetter.visibility = View.VISIBLE
@@ -156,6 +156,15 @@ class PlayingGameFragment : Fragment() {
                 lives <= 0 -> {
                     Toast.makeText(activity, "Du har tabte", Toast.LENGTH_LONG).show()
                     gamWonOver()
+
+                }
+                getSpinner() == 4 ->{
+                    extra500(scores)
+                    scores = getScore()
+                    binding.playerScore.text = "score$scores"
+                    buClickToSendTheLetter.setOnClickListener {
+                        game()
+                    }
 
                 }
             }

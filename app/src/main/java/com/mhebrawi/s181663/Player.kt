@@ -29,6 +29,10 @@ fun extra1000(score: Int) {
     scores = score
     scores += 1000
 }
+fun extra500(score: Int) {
+    scores = score
+    scores += 500
+}
 
 
 fun resetScore(score: Int) {

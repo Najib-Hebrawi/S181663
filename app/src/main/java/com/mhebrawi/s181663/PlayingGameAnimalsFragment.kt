@@ -27,7 +27,7 @@ private const val ARG_PARAM2 = "param2"
 class PlayingGameAnimalsFragment : Fragment() {
     private lateinit var binding: FragmentPlayingGameAnimalsBinding
 
-    var lives: Int = 1
+    var lives: Int = 5
     var scores: Int = 0
     var points: Int = 0
     var handler = Handler()
@@ -91,7 +91,7 @@ class PlayingGameAnimalsFragment : Fragment() {
                 progressBar.visibility = View.VISIBLE
                 spinWheelFun()
                 spinlogic()
-                if (getSpinner() in 0..2) {
+                if (getSpinner() in 0..2 || getSpinner() ==4) {
                     val x = Runnable {
                         progressBar.visibility = View.GONE
                         buClickToSendTheLetter.visibility = View.VISIBLE
@@ -149,6 +149,15 @@ class PlayingGameAnimalsFragment : Fragment() {
                     binding.playerLives.text = "lives $lives"
                     buClickToStartSpining.visibility = View.VISIBLE
 
+
+                }
+                getSpinner() == 4 ->{
+                    extra500(scores)
+                    scores = getScore()
+                    binding.playerScore.text = "score$scores"
+                    buClickToSendTheLetter.setOnClickListener {
+                        game()
+                    }
 
                 }
                 lives <= 0 -> {
