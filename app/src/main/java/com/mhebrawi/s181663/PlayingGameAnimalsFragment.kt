@@ -193,8 +193,11 @@ class PlayingGameAnimalsFragment : Fragment() {
                     textViewShowTheWord.text = updateTheHiddenWordd()
                     playerScore.text = "Score  : " + getScore() + "DKK"
                     resetCounterr()
-                    if (!isWonn())
-                        Toast.makeText(activity, " Du Har vundet", Toast.LENGTH_LONG).show()
+                    if (!isWonn()) {
+                        Toast.makeText(activity, " Du Har vundet${scores}", Toast.LENGTH_LONG).show()
+                        updateScore()
+                        gamWonOver()
+                    }
                     else {
                         spinAgain()
                     }

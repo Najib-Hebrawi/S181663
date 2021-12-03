@@ -195,9 +195,12 @@ class PlayingGameFragment : Fragment() {
                     textViewShowTheWord.text = updateTheHiddenWord()
                     playerScore.text = "Score  : " + getScore() + "DKK"
                     resetCounter()
-                    if (!isWon())
-                        Toast.makeText(activity, " Du Har vundet", Toast.LENGTH_LONG).show()
-                    else {
+                    if (!isWon()) {
+                        Toast.makeText(activity, " Du Har vundet${scores}", Toast.LENGTH_LONG).show()
+                        updateScore()
+                        gamWonOver()
+                    }
+                        else {
                         spinAgain()
                     }
                 } else if (!findLetterAsGusset(EditTextWritTheWord.text.toString()) && lives <= 1) {
